@@ -1,0 +1,150 @@
+/* auth.scss */
+
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.auth-container {
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+
+    .auth-left-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        align-items: center; 
+        height: 100%;
+        width: 60%;
+        overflow-y: hidden;
+
+        .superAnt {
+            padding-top: 200px;
+        }
+        .down-arrow {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .up-arrow {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .slide-enter {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .slide-enter-active {
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+
+        .slide-exit {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .slide-exit-active {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+    }
+    
+    .auth-right-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100%;
+        width: 40%;
+    
+        .auth-card {
+            width: 400px;
+            padding: 60px;
+            // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+        
+            .auth-title {
+                margin-bottom: 20px;
+                text-align: center;
+            }   
+    
+            .form {
+                display: flex;
+                flex-direction: column;
+        
+                .input-group {
+                    margin-bottom: 15px;
+        
+                    input {
+                        padding: 10px;
+                        border: 1.5px solid #2B3139;
+                        border-radius: 10px;
+                        width: 100%;
+                        color: #EAECEF;
+                        background-color: #181a20;
+        
+                        &::placeholder {
+                            color: #B0B0B0;
+                        }
+                    }
+                }
+        
+                .password-message {
+                    margin-top: 5px;
+                    font-size: 10px;
+                
+                    &.match {
+                        color: green;
+                    }
+                
+                    &.no-match {
+                        color: red;
+                    }
+                }
+        
+                button {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #2a48b6;
+                    color: #EAECEF;
+                    border: none;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    font-size: 16px;
+            
+                    &:hover {
+                        background-color: #263673;
+                    }
+                }
+            }
+    
+            .signup-link-container {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+        
+                .signup-link {
+                    display: block;
+                    margin-top: 20px;
+                    text-align: center;
+                    font-size: 14px;
+                    text-decoration: none;
+                    cursor: pointer;
+            
+                    &:hover {
+                        color: #758ad8;
+                    }
+                }
+            }
+        }
+    }
+}
